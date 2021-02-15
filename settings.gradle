@@ -1,2 +1,3 @@
+include ':dc'
 include ':app'
 rootProject.name = "DynamicCheckBox"
