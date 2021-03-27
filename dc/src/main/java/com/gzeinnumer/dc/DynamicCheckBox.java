@@ -2,6 +2,7 @@ package com.gzeinnumer.dc;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.CheckBox;
@@ -46,7 +47,7 @@ public class DynamicCheckBox extends LinearLayout {
     private <T> void initView(List<T> items) {
         TypedArray attributes = _context.obtainStyledAttributes(_attrs, R.styleable.DynamicCheckBox);
 
-        if (attributes.getInt(R.styleable.DynamicCheckBox_orientation, 1) == 0)
+        if (attributes.getInt(R.styleable.DynamicCheckBox_orientationCheckBox, 1) == 0)
             _orientation = HORIZONTAL;
 
         setOrientation(_orientation);
@@ -58,7 +59,9 @@ public class DynamicCheckBox extends LinearLayout {
         linearLayout.setOrientation(_orientation);
 
         CheckBox checkBoxPreview = new CheckBox(_context);
-        checkBoxPreview.setId(View.generateViewId());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            checkBoxPreview.setId(View.generateViewId());
+        }
         checkBoxPreview.setText("Dynamic CheckBox");
         checkBoxPreview.setTextAppearance(_context, _cbStyle);
         if (items.isEmpty()) {

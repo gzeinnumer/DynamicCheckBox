@@ -8,7 +8,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-2.0.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.0.1-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -75,7 +75,7 @@ if you want to custom your `CheckBox` use `app:style="@style/checkBoxStyle"` on 
 ```xml
 <com.gzeinnumer.dc.DynamicCheckBox
     ...
-    app:orientation="horizontal"
+    app:orientationCheckBox="horizontal"
     app:style="@style/checkBoxStyle"/>
 ```
 
@@ -186,6 +186,8 @@ dynamicCheckBox.setItemList(listObject)
   - First Release
 - **2.0.0**
   - Support SDK 16
+- **2.0.1**
+  - Bug Fixing
 
 ---
 # Contribution
