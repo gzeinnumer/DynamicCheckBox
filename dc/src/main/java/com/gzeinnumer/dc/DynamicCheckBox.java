@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DynamicCheckBox extends LinearLayout {
@@ -21,6 +23,7 @@ public class DynamicCheckBox extends LinearLayout {
     private int _cbStyle = R.style.def_checkBoxStyle;
     private int _orientation = VERTICAL;
     private OnCheckedChangeListener onCheckedChangeListener;
+    private List<Integer> positions;
 
     public DynamicCheckBox(Context context) {
         this(context, null);
@@ -75,6 +78,10 @@ public class DynamicCheckBox extends LinearLayout {
                 checkBox.setTextAppearance(_context, _cbStyle);
                 checkBox.setText(items.get(i).toString());
                 checkBox.setId(i);
+                for (int j = 0; j < positions.size(); j++) {
+                    if (positions.get(j)==i)
+                        checkBox.setChecked(true);
+                }
 
                 final int finalI = i;
                 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -116,6 +123,16 @@ public class DynamicCheckBox extends LinearLayout {
     @Override
     protected void removeDetachedView(View child, boolean animate) {
         super.removeDetachedView(child, false);
+    }
+
+    public DynamicCheckBox setSelectedItem(List<Integer> positions) {
+        this.positions = positions;
+        return this;
+    }
+
+    public DynamicCheckBox setSelectedItem(Integer... positions) {
+        this.positions = Arrays.asList(positions);
+        return this;
     }
 
     public interface OnCheckedChangeListener<T> {

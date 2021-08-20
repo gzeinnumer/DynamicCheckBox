@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.gzeinnumer.dc.DynamicCheckBox;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,19 +34,28 @@ public class MainActivity extends AppCompatActivity {
         listString.add("Tiga");
         listString.add("Empat");
 
-        dynamicCheckBox.setItemList(listString).setOnCheckedChangeListener(new DynamicCheckBox.OnCheckedChangeListener<String>() {
-            @Override
-            public void onCheckedChanged(ArrayList<String> items) {
-                for (int i = 0; i < items.size(); i++) {
-                    Log.d(TAG, "onCheckedChanged: " + items.get(i));
-                }
-            }
+        ArrayList<Integer> is = new ArrayList<Integer>();
+        is.add(1);
+        is.add(2);
+        is.add(3);
 
-            @Override
-            public void onCheckedShow(String clickedValue) {
-                Log.d(TAG, "onCheckedShow: " + clickedValue);
-            }
-        });
+        dynamicCheckBox
+//                .setSelectedItem(1, 2, 3)
+                .setSelectedItem(is)
+                .setItemList(listString)
+                .setOnCheckedChangeListener(new DynamicCheckBox.OnCheckedChangeListener<String>() {
+                    @Override
+                    public void onCheckedChanged(ArrayList<String> items) {
+                        for (int i = 0; i < items.size(); i++) {
+                            Log.d(TAG, "onCheckedChanged: " + items.get(i));
+                        }
+                    }
+
+                    @Override
+                    public void onCheckedShow(String clickedValue) {
+                        Log.d(TAG, "onCheckedShow: " + clickedValue);
+                    }
+                });
     }
 
     private void sample2() {

@@ -8,7 +8,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-2.0.1-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.1.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -158,6 +158,14 @@ dynamicCheckBox.setItemList(listObject)
     });
 ```
 #
+Set `setSelectedItem(index)` use before `setItemList(list)`.
+```java
+dynamicCheckBox.setSelectedItem(1,2,3).setItemList(list). ...
+//or
+dynamicCheckBox.setSelectedItem(new ArrayList<Integer>()).setItemList(list). ...
+```
+
+#
 **Preview** :
 
 | <img src="https://github.com/gzeinnumer/DynamicCheckBox/blob/master/preview/example1.jpg"/>| <img src="https://github.com/gzeinnumer/DynamicCheckBox/blob/master/preview/example3.jpg"/> |
@@ -188,6 +196,8 @@ dynamicCheckBox.setItemList(listObject)
   - Support SDK 16
 - **2.0.1**
   - Bug Fixing
+- **2.1.0**
+  - `setSelectedItem()`
 
 ---
 # Contribution
