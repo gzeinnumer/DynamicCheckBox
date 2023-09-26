@@ -23,7 +23,7 @@ public class DynamicCheckBox extends LinearLayout {
     private int _cbStyle = R.style.def_checkBoxStyle;
     private int _orientation = VERTICAL;
     private OnCheckedChangeListener onCheckedChangeListener;
-    private List<Integer> positions;
+    private List<Integer> positions = new ArrayList<>();
 
     public DynamicCheckBox(Context context) {
         this(context, null);
@@ -79,7 +79,7 @@ public class DynamicCheckBox extends LinearLayout {
                 checkBox.setText(items.get(i).toString());
                 checkBox.setId(i);
                 for (int j = 0; j < positions.size(); j++) {
-                    if (positions.get(j)==i)
+                    if (positions.get(j) == i)
                         checkBox.setChecked(true);
                 }
 

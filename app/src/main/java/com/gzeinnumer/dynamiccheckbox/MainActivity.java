@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         dynamicCheckBox
 //                .setSelectedItem(1, 2, 3)
-                .setSelectedItem(is)
+//                .setSelectedItem(is)
                 .setItemList(listString)
                 .setOnCheckedChangeListener(new DynamicCheckBox.OnCheckedChangeListener<String>() {
                     @Override

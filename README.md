@@ -8,7 +8,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-2.1.1-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.1.2-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -199,6 +199,8 @@ dynamicCheckBox.setSelectedItem(new ArrayList<Integer>()).setItemList(list). ...
 - **2.1.0**
   - `setSelectedItem()`
 - **2.1.1**
+  - Bug Fixing
+- **2.1.2**
   - Bug Fixing
 
 ---
